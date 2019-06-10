@@ -1,0 +1,68 @@
+<%@page import="it.prova.cartellaesattorialespringjpa.model.Contribuente"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+
+   <%@ include file="../header.jsp" %>
+      
+    <div class="page-header">
+
+</div>
+		<div class="alert alert-danger alert-dismissible fade show ${messaggioDiErrore != null?'':'d-none' }" role="alert">
+ 		<c:forEach items="${messaggioDiErrore }" var="item"> 
+ 			<p>${item } </p>
+			</c:forEach> 
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			  </button>
+
+		<form class="form-horizontal" action="InserisciCartellaServlet"
+			method="post">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="denominazioneInputId">Denominazione:</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" id="denominazioneInputId"
+						name="denominazioneInput">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="importoInputId">Importo:</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" id="importoInputId"
+						name="importoInput">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="ContribuenteInputId">Municipio:</label>
+			<select name="contribuenteInput">
+			<option value ="-1">----SELEZIONA CONTRIBUENTE----</option>
+			<%
+				List<Contribuente> listaContribuenti = (List<Contribuente>) request.getAttribute("listaContribuentiAttribute");
+				for (Contribuente contribuenteItem : listaContribuenti) {
+			%>
+			<option value ="<%=contribuenteItem.getId() %>" ><%=contribuenteItem.getNome()+" "+contribuenteItem.getCognome() %></option>
+			
+			<%} %>
+			</select>
+			</div>
+			</div>
+			<br><br>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary btn-md">Inserisci</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+	<!-- /.container -->
+</body>
+</html>

@@ -1,0 +1,12 @@
+package it.prova.cartellaesattorialespringjpa.dao.contribuente;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ContribuenteDAOImpl implements ContribuenteDAO {
+	@PersistenceContext
+	private EntityManager entityManager;
+}

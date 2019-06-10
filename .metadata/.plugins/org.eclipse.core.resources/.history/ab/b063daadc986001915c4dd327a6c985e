@@ -1,0 +1,5 @@
+package it.concessionariomoto.service.concessionario;
+
+public interface ConcessionarioService {
+
+}

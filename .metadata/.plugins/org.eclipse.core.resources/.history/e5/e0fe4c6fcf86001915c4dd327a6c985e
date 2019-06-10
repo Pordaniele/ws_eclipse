@@ -1,0 +1,63 @@
+package it.concessionariomoto.service.concessionario;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import it.concessionariomoto.dao.concessionario.ConcessionarioDAO;
+import it.concessionariomoto.model.Concessionario;
+@Component
+public class ConcessionarioServiceImpl implements ConcessionarioService{
+	@Autowired
+	private ConcessionarioDAO concessionarioDAO;
+	@Transactional(readOnly = true)
+	@Override
+	public List<Concessionario> listAllMunicipi() {
+		return concessionarioDAO.list();
+	}
+
+	@Override
+	public Concessionario caricaSingoloConcessionario(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Concessionario caricaSingoloConcessionarioEagerAbitanti(Long idMunicipio) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void aggiorna(Concessionario concessionarioInstance) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void inserisciNuovo(Concessionario concessionarioInstance) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void rimuovi(Concessionario concessionarioInstance) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Concessionario> findByExample(Concessionario example) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void refresh(Concessionario concessionarioInstance) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

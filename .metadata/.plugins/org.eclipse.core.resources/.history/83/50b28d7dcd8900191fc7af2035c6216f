@@ -1,0 +1,5 @@
+package it.cartellaesattorialespringjpa.model;
+
+public class Contribuente {
+
+}

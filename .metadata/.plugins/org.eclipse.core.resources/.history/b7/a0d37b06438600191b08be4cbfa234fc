@@ -1,0 +1,21 @@
+package it.prova.test;
+
+import it.prova.model.MateriaPrima;
+import it.prova.model.StatoMateria;
+import it.prova.service.MateriaPrimaService;
+import it.prova.spring.MyServiceFactory;
+
+public class Test {
+public static void main(String[] args) {
+	
+	MateriaPrimaService materiaPrimaService= MyServiceFactory.getMateriaPrimaService();
+	
+	MateriaPrima mat1= materiaPrimaService.cercaPerId(1);
+	materiaPrimaService.aggiungiMateriaPrima(mat1);
+	MateriaPrima mat2= new MateriaPrima(10, "ferro",StatoMateria.IN_INSERIMENTO);
+	materiaPrimaService.iniziaLavorazione(mat2);
+
+
+}
+}
+

@@ -1,0 +1,14 @@
+package it.concessionariomoto.test;
+
+import it.concessionariomoto.serviceo.MyServiceFactory;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String casoDaTestare = it.concessionariomoto.serviceo.BatteriaDiTestService.FIND_BY_EXAMPLE_BY_CITTA;
+		MyServiceFactory.getBatteriaDiTestServiceInstance().eseguiBatteriaDiTest(casoDaTestare);
+		
+	}
+
+}

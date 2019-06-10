@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+	<bean id="CheckupService" class="it.checkupprogetto.service.CheckupServiceImpl">
+		<property name="EmatologoService" ref="EmatologoService" />
+		<property name="CardiologoService" ref="CardiologoService" />
+		<property name="OrtopedicoService" ref="OrtopedicoService" />
+		<property name="MedicoGenericoService" ref="MedicoGenericoService" />
+	</bean>
+	
+	<bean id="EmatologoService" class="it.checkupprogetto.service.EmatologoServiceImpl">
+	</bean>
+	
+	<bean id="CardiologoService" class="it.checkupprogetto.service.CardiologoServiceImpl">
+	</bean>
+	
+	<bean id="OrtopedicoService" class="it.checkupprogetto.service.OrtopedicoServiceImpl">
+	<property name="radiologoService" ref="RadiologoService"></property>
+	</bean>
+	
+	<bean id="MedicoGenericoService" class="it.checkupprogetto.service.MedicoGenericoServiceImpl">
+	</bean>
+	
+	<bean id="RadiologoService" class="it.checkupprogetto.service.RadiologoServiceImpl">
+	</bean>
+ 
+</beans>

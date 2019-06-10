@@ -1,0 +1,11 @@
+package it.concessionariomoto.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Concessionario {
+private String denominazione;
+private String citta;
+private String partitaIva;
+private Set<Motociclo> motocicli = new HashSet<>();
+}

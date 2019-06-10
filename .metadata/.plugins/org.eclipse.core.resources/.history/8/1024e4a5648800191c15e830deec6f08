@@ -1,0 +1,50 @@
+package it.vinospring.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import it.prova.dao.PersonaDAO;
+import it.vinospring.dao.VinoDAO;
+import it.vinospring.model.Vino;
+
+public class VinoServiceImpl implements VinoService{
+	@Autowired
+	private VinoDAO vinoDAO;
+	@Override
+	public List<Vino> list() {
+return vinoDAO.list();
+		
+	}
+
+	@Override
+	public Vino get(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(Vino o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insert(Vino o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Vino o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Vino> findByExample(Vino o) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

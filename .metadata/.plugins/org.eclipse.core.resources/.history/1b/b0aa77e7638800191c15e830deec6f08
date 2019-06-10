@@ -1,0 +1,5 @@
+package it.vinospring.dao;
+
+public class VinoDAOImpl {
+
+}

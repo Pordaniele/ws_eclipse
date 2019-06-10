@@ -1,0 +1,22 @@
+<%@page import="it.helloabitante.model.Abitante"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%Abitante local =(Abitante) request.getAttribute("abitanteDaInviareAPaginaDettalio"); %><br>
+Descrizione!!!
+nome: <%=local.getNome() %><br>
+cognome: <%=local.getCognome() %><br>
+eta:<%=local.getEta() %><br>
+codice fiscale: <%=local.getCodiceFiscale() %><br>
+motto di vita: <%= local.getMottoDiVita() %><br>
+
+
+<a href="searchForm.jsp">Torna alla home page</a>
+</body>
+</html>

@@ -1,0 +1,109 @@
+package it.helloabitante.dao.abitante;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import it.helloabitante.dao.DB_Mock;
+import it.helloabitante.dao.MyConnection;
+import it.helloabitante.model.Abitante;
+
+public class AbitanteDAOImpl implements AbitanteDAO {
+	
+	private Connection connection;
+	
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+
+	@Override
+	public List<Abitante> findByNomeAndCognome(String nome, String cognome) {
+		List<Abitante> result = new ArrayList<>();
+		
+		for (Abitante abitanteItem : DB_Mock.LISTA_ABITANTI) {
+			if(abitanteItem.getNome().equals(nome) && abitanteItem.getCognome().equals(cognome))
+				result.add(abitanteItem);
+		}
+		return result;
+	}
+
+	@Override
+	public List<Abitante> list() throws Exception {
+
+		Connection c = null;
+		ResultSet rs = null;
+		Statement s = null;
+		Abitante temp = null;
+		List<Abitante> result = new ArrayList<Abitante>();
+
+		try {
+
+			c = MyConnection.getConnection();
+			s = c.createStatement();
+
+			rs = s.executeQuery("select * from abitante;");
+
+			while (rs.next()) {
+				temp = new Abitante();
+				temp.setNome(rs.getString("nome"));
+				temp.setCognome(rs.getString("cognome"));
+				temp.setIdAbitante(rs.getLong("idabitante"));
+				temp.setEta(rs.getInt("eta"));
+				temp.setCodiceFiscale(rs.getString("codicefiscale"));
+				temp.setMottoDiVita(rs.getString("mottodivita"));
+				result.add(temp);
+
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		} finally {
+			try {
+				rs.close();
+				s.close();
+				c.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+
+	@Override
+	public Abitante get(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int update(Abitante input) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int insert(Abitante input) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(Abitante input) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Abitante> findByExample(Abitante input) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}

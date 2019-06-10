@@ -1,0 +1,5 @@
+package it.vinospring.service;
+
+public interface VinoService {
+
+}

@@ -1,0 +1,14 @@
+package it.helloabitante.test;
+
+import it.helloabitante.model.Abitante;
+import it.helloabitante.service.MyServiceFactory;
+
+public class Test {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		
+MyServiceFactory.getAbitanteServiceInstance().inserisciNuovoAbitante(new Abitante("Marco", "mengoni", "idfhsoidfh", 26, "sono uno stupido")); 
+	}
+
+}

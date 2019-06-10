@@ -1,0 +1,74 @@
+<%@page import="it.prova.cartellaesattorialespringjpa.model.Contribuente"%>
+<%@page import="java.util.List"%>
+<%@page import="it.prova.cartellaesattorialespringjpa.model.CartellaEsattoriale"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+
+   <%@ include file="../header.jsp" %>
+      
+    <div class="page-header">
+
+<h3>Inserisci Abitante</h3>
+			<%if(request.getAttribute("messaggioDiErrore") != null){ %>
+			<%=request.getAttribute("messaggioDiErrore") %>
+			<% }else{ %>Inserire dati<br>
+			<%} %>
+			<%
+			CartellaEsattoriale cartellaInPagina = (CartellaEsattoriale) request.getAttribute("cartellaDaModificare");
+		%>
+		</div>
+
+		<form class="form-horizontal" action="ModificaCartellaServlet"
+			method="post">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="denominazioneInputId">Denominazione:</label>
+				<div class="col-sm-4">
+					<input class="form-control" value="<%=cartellaInPagina.getDenominazione() %>" type="text" id="denominazioneInputId"
+						name="denominazioneInput">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="importoInputId">Importo:</label>
+				<div class="col-sm-4">
+					<input class="form-control" value="<%=cartellaInPagina.getImporto() %>" type="text" id="importoInputId"
+						name="importoInput">
+				</div>
+			</div>
+			<input class="form-control" value="<%=cartellaInPagina.getId() %>" type="hidden" id="idInputId"
+						name="idInput">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="contribuenteInputId">Contribuente:</label>
+			<select name="contribuenteInput">
+			<option value ="<%=cartellaInPagina.getContribuente().getId()%>"><%=cartellaInPagina.getContribuente().getNome()+" "+cartellaInPagina.getContribuente().getCognome() %></option>
+			<%
+				List<Contribuente> listaContribuente = (List<Contribuente>) request.getAttribute("listaContribuenti");
+				for (Contribuente contribuenteItem : listaContribuente) {
+					if(cartellaInPagina.getContribuente().getId()!= contribuenteItem.getId()){
+			%>
+			<option value ="<%=contribuenteItem.getId() %>" ><%=contribuenteItem.getNome()+" "+contribuenteItem.getCognome() %></option>
+			
+			<%}
+					} %>
+			</select>
+			</div>
+			</div>
+			<br><br>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary btn-md">Inserisci</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+	<!-- /.container -->
+</body>
+</html>

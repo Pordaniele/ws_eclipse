@@ -1,0 +1,61 @@
+package it.concessionariomoto.serviceo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import it.concessionariomoto.model.Concessionario;
+import it.concessionariomoto.service.concessionario.ConcessionarioService;
+import it.concessionariomoto.service.motociclo.MotocicloService;
+import it.municipioabitantejpa.model.Municipio;
+
+@Component
+public class BatteriaDiTestService {
+
+	@Autowired
+	private MotocicloService motocicloService;
+
+	@Autowired
+	private ConcessionarioService concessionarioService;
+
+	// casi di test (usare valorizzando la variabile casoDaTestare nel main)
+	public static final String INSERISCI_NUOVO_CONCESSIONARIO = "INSERISCI_NUOVO_CONCESSIONARIO";
+	public static final String INSERISCI_ABITANTI_DATO_UN_MUNICIPIO = "INSERISCI_ABITANTI_DATO_UN_MUNICIPIO";
+	public static final String CERCA_ABITANTE_DATO_ID_MUNICIPIO = "CERCA_ABITANTE_DATO_ID_MUNICIPIO";
+	public static final String RIMUOVI_MUNICIPIO_E_ABITANTI = "RIMUOVI_MUNICIPIO_E_ABITANTI";
+	public static final String ELENCA_TUTTI_I_CONCESSIONARI = "ELENCA_TUTTI_I_CONCESSIONARI";
+	public static final String FIND_BY_EXAMPLE_BY_VIA = "FIND_BY_EXAMPLE_BY_VIA";
+	public static final String UPDATE_ABITANTE_SET_ETA = "UPDATE_ABITANTE_SET_ETA";
+	public static final String CARICA_MUNICIPIO_EAGER = "CARICA_MUNICIPIO_EAGER";
+	public static final String REMOVE_CON_ECCEZIONE_VA_IN_ROLLBACK = "REMOVE_CON_ECCEZIONE_VA_IN_ROLLBACK";
+	public static final String FIND_ALL_ABITANTE_UBICAZIONE_CONTIENE = "FIND_ALL_ABITANTE_UBICAZIONE_CONTIENE";
+	public static final String COUNT_MUNICIPI_BY_MINORENNI = "COUNT_MUNICIPI_BY_MINORENNI";
+
+	public void eseguiBatteriaDiTest(String casoDaTestare) {
+		try {
+			switch (casoDaTestare) {
+			case INSERISCI_NUOVO_CONCESSIONARIO:
+				// creo nuovo municipio
+				Concessionario nuovoConcessionario = new Concessionario("AutoFiori",
+						"Roma", "92380192380");
+				// salvo
+				concessionarioService.inserisciNuovo(nuovoConcessionario);
+				System.out.println("Municipio appena inserito: "
+						+ nuovoConcessionario);
+				break;
+
+			case ELENCA_TUTTI_I_CONCESSIONARI:
+				// elencare i municipi
+				System.out.println("Elenco i municipi:");
+				for (Concessionario concessionarioItem : concessionarioService
+						.listAllMunicipi()) {
+					System.out.println(concessionarioItem);
+				}
+				break;
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
