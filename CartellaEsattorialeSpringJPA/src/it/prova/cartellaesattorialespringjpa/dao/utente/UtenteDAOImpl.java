@@ -84,4 +84,25 @@ public class UtenteDAOImpl implements UtenteDAO {
 		return query.getResultList().isEmpty() ? null : (Utente) query.getSingleResult();
 	}
 
+
+	
+	@Override
+	public Utente executeFetchLogin(String username, String password) {
+		Query query = entityManager
+				.createQuery("select u FROM Utente u left join fetch u.ruoli r where u.username = :usernameParam and u.password= :passwordParam");
+		query.setParameter("usernameParam", username);
+		query.setParameter("passwordParam", password);
+
+		return query.getResultList().isEmpty() ? null : (Utente) query.getSingleResult();
+	}
+
+	@Override
+	public Utente CaricaEager(long id) {
+		Query query = entityManager
+				.createQuery("select u FROM Utente u join fetch u.ruoli  where u.id= :id");
+		query.setParameter("id", id);
+		return (Utente) query.getSingleResult();
+	}
+
+
 }

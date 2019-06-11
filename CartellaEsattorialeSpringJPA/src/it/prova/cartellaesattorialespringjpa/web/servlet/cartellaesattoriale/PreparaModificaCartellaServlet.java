@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import it.prova.cartellaesattorialespringjpa.model.CartellaEsattoriale;
+import it.prova.cartellaesattorialespringjpa.model.dto.CartellaEsattorialeDTO;
 import it.prova.cartellaesattorialespringjpa.service.cartellaesattoriale.CartellaEsattorialeService;
 import it.prova.cartellaesattorialespringjpa.service.contribuente.ContribuenteService;
 
@@ -46,10 +47,7 @@ public class PreparaModificaCartellaServlet extends HttpServlet {
 		rd.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

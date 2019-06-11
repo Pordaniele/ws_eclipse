@@ -13,7 +13,7 @@
 	<%@ include file="../header.jsp"%>
 
 	<div class="page-header">
-	
+
 
 		<h3>Dettaglio cartella esattoriale</h3>
 	</div>
@@ -35,10 +35,10 @@
 		<dt class="col-sm-3 text-right">Contribuente</dt>
 		<dd class="col-sm-9">${contribuente.nome } ${contribuente.cognome }</dd>
 	</dl>
-	</div>
-	
+
+
 	<a href="<%= request.getContextPath()%>/home.jsp" class="btn btn-info">Torna
 		alla pagina iniziale</a>
-	
+
 </body>
 </html>

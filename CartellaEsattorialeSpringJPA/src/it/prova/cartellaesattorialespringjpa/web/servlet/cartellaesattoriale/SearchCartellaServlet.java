@@ -56,9 +56,9 @@ public class SearchCartellaServlet extends HttpServlet {
 		}
 
 		String denominazioneInput = request.getParameter("denominazioneInput");
-		
-		CartellaEsattoriale example = new CartellaEsattoriale();
-		example.setDenominazione(denominazioneInput);
+
+		CartellaEsattorialeDTO cartella = new CartellaEsattorialeDTO();
+		cartella.setDenominazione(denominazioneInput);
 		int importoInput = 0;
 
 		try {
@@ -68,8 +68,8 @@ public class SearchCartellaServlet extends HttpServlet {
 			importoInput = -1;
 		}
 		if (importoInput >= 0)
-			example.setImporto(importoInput);
-		
+			cartella.setImporto(importoInput);
+		CartellaEsattoriale example = CartellaEsattorialeDTO.buildCartellaFromDTO(cartella);
 		request.setAttribute("listaCartelle", cartellaEsattorialeService.findByExample(example));
 
 		RequestDispatcher rd = request.getRequestDispatcher("/cartellaEsattoriale/result.jsp");

@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 		String usernameInput = request.getParameter("inputUsername");
 		String passwordInput = request.getParameter("inputPassword");
 		
-		Utente utenteCheAccede = utenteService.eseguiAccesso(usernameInput, passwordInput);
+		Utente utenteCheAccede = utenteService.executeFetchLogin(usernameInput, passwordInput);
 		
 		//se non trovo nulla non deve essere possibile accedere
 		if(utenteCheAccede == null) {
@@ -61,5 +61,5 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 		rd.forward(request, response);
 	}
-
+	//userinfo.ruoli.contains.costante
 }

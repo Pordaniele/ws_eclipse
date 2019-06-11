@@ -19,5 +19,8 @@ public interface UtenteService {
 	public List<Utente> findByExample(Utente example);
 	
 	public Utente eseguiAccesso(String username, String password);
-
+	
+	public Utente CaricaEager(long id);
+	
+	public Utente executeFetchLogin(String username, String password);
 }

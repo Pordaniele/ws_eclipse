@@ -81,6 +81,7 @@ public class CartellaEsattorialeDTO {
 		cartellaEsattoriale.setDenominazione(cartellaEsattorialeDTO.getDenominazione());
 		cartellaEsattoriale.setImporto(cartellaEsattorialeDTO.getImporto());
 		cartellaEsattoriale.setId(cartellaEsattorialeDTO.getId());
+		
 		return cartellaEsattoriale;
 	}
 	

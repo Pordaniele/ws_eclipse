@@ -32,51 +32,52 @@
 			</div>
 
 
-				<form class="form-horizontal" action="ModificaContribuenteServlet"
-					method="post">
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>
-						<div class="col-sm-4">
-							<input class="form-control"
-								value="${contribuenteDaModificare.nome}" type="text"
-								id="nomeInputId" name="nomeInput">
-						</div>
+			<form class="form-horizontal" action="ModificaContribuenteServlet"
+				method="post">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>
+					<div class="col-sm-4">
+						<input class="form-control"
+							value="${contribuenteDaModificare.nome}" type="text"
+							id="nomeInputId" name="nomeInput">
 					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="cognomeInputId">Cognome:</label>
-						<div class="col-sm-4">
-							<input class="form-control"
-								value="${contribuenteDaModificare.cognome }" type="text"
-								id="cognomeInputId" name="cognomeInput">
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="cognomeInputId">Cognome:</label>
+					<div class="col-sm-4">
+						<input class="form-control"
+							value="${contribuenteDaModificare.cognome }" type="text"
+							id="cognomeInputId" name="cognomeInput">
 					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="indirizzoInputId">Indirizzo:</label>
-						<div class="col-sm-4">
-							<input class="form-control"
-								value="${contribuenteDaModificare.indirizzo }" type="text"
-								id="indirizzoInputId" name="indirizzoInput">
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="indirizzoInputId">Indirizzo:</label>
+					<div class="col-sm-4">
+						<input class="form-control"
+							value="${contribuenteDaModificare.indirizzo }" type="text"
+							id="indirizzoInputId" name="indirizzoInput">
 					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="codiceFiscaleInputId">Codice
-							Fiscale:</label>
-						<div class="col-sm-4">
-							<input class="form-control"
-								value="${contribuenteDaModificare.codiceFiscale }" type="text"
-								id="codiceFiscaleInputId" name="codiceFiscaleInput">
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="codiceFiscaleInputId">Codice
+						Fiscale:</label>
+					<div class="col-sm-4">
+						<input class="form-control"
+							value="${contribuenteDaModificare.codiceFiscale }" type="text"
+							id="codiceFiscaleInputId" name="codiceFiscaleInput">
 					</div>
-					<input class="form-control" value="${contribuenteDaModificare.id }"
-						type="hidden" id="idInputId" name="idInput">
+				</div>
+				<input class="form-control" value="${contribuenteDaModificare.id }"
+					type="hidden" id="idInputId" name="idInput">
 
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-primary btn-md">Inserisci</button>
-						</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary btn-md">Inserisci</button>
 					</div>
-				</form>
-</div>
-			<!-- /.container -->
+				</div>
+			</form>
+		</div>
+	</div>
+	
 </body>
 </html>

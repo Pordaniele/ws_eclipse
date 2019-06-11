@@ -28,20 +28,14 @@ public class PrepareSearchContribuenteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//controllo utente in sessione (va fatto in tutte le servlet)
-				if(request.getSession().getAttribute("userInfo") == null) {
-					response.sendRedirect(request.getContextPath());
-					return;
-				}
+		
 				
 				
 				RequestDispatcher rd = request.getRequestDispatcher("/contribuente/search.jsp");
 				rd.forward(request, response);
 			}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

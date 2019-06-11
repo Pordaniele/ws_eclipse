@@ -9,6 +9,8 @@ C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\101674
 \CartellaEsattorialeSpringJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3180392795.index
 \VinoSpring\src
+C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1263893380.index
+\CartellaEsattorialeSpringJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3152913394.index
 \GestioneMunicipioSpringJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1722995331.index
@@ -27,3 +29,5 @@ C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\246635
 \PersonaSpringJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2376082940.index
 \CartellaEsattorialeSpringJPA\src
+C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1475514229.index
+\ProvaFilter\src
