@@ -34,11 +34,11 @@
 					<td>${item.cognome }</td>
 
 					<td><a
-						href="VisualizzaDettaglioContribuenteServlet?idContribuente=${item.id }"
+						href="${pageContext.request.contextPath}/admin/VisualizzaDettaglioUtenteServlet?idUtente=${item.id }"
 						class="btn btn-info">Dettaglio</a> <a
 						href="${pageContext.request.contextPath}/admin/PrepareModificaUtenteServlet?idUtente=${item.id }"
 						class="btn btn-info">Modifica</a> <a
-						href="PreparaEliminaContribuenteServlet?idContribuente=${item.id }"
+						href="${pageContext.request.contextPath}/admin/PreparaEliminaUtenteServlet?idUtente=${item.id }"
 						class="btn btn-info">Elimina</a></td>
 				</tr>
 			</c:forEach>

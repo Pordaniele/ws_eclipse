@@ -56,7 +56,7 @@ public class UtenteServiceImpl implements UtenteService {
 	public Utente executeFetchLogin(String username, String password) {
 		return utenteDAO.executeFetchLogin(username, password);
 	}
-
+	@Transactional(readOnly=true)
 	@Override
 	public Utente CaricaEager(long id) {
 		return utenteDAO.CaricaEager(id);

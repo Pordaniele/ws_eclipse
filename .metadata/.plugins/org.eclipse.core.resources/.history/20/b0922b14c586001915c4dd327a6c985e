@@ -1,9 +1,0 @@
-package it.concessionariomoto.model;
-
-public class Motociclo {
-private String marca;
-private String modello;
-private int cilindrata;
-private int annoImmatricolazione;
-private Concessionario concessionario;
-}

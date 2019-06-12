@@ -1,5 +1,0 @@
-package it.concessionariomoto.dao.motociclo;
-
-public interface MotocicloDAO {
-
-}

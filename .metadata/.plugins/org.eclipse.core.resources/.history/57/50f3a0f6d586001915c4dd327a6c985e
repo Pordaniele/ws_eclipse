@@ -1,8 +1,0 @@
-package it.concessionariomoto.dao.concessionario;
-
-import it.concessionariomoto.daoz.IBaseDAO;
-import it.concessionariomoto.model.Concessionario;
-
-public interface ConcessionarioDAO extends IBaseDAO<Concessionario>{
-	public Concessionario findEagerFetch(long id);
-}

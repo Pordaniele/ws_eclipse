@@ -21,6 +21,8 @@ C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\150764
 \Hello11\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1749955523.index
 \GestioneMunicipioSpringJPA\src
+C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1252167553.index
+\EbayJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1406213844.index
 \Hello\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\60088222.index

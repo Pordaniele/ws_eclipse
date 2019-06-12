@@ -13,6 +13,7 @@
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\corso\ws_eclipse\ProvaFilter"/>
 			<item value="C:\corso\ws_eclipse\GestioneMunicipioSpringJPA"/>
 			<item value="C:\corso\ws_eclipse\PersonaSpringJPA"/>
 			<item value="C:\corso\ws_eclipse\HelloAbitante"/>

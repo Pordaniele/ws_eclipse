@@ -73,9 +73,12 @@ public class ModificaUtenteServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher(destinazione);
 			rd.forward(request, response);
 			return;}
+		
 		String []ruoli=request.getParameterValues("ruoloId");
+		if(ruoli != null && ruoli.length> 0) {
 		for (int i = 0; i < ruoli.length; i++) {
 			temp.getRuoli().add(ruoloService.get(Long.parseLong(ruoli[i])));
+		}
 		}
 		Utente inserUtente= UtenteDTO.buildUtenteFromDTO(temp);
 		inserUtente.setId(idInput);

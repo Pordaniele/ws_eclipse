@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Tue Jun 11 17:49:32 CEST 2019
+#Wed Jun 12 12:39:54 CEST 2019
 org.eclipse.jst.jee.server\:/binary\:C\:\\corso\\ws_eclipse\\CartellaEsattorialeSpringJPA\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\corso\\ws_eclipse\\EbayJPA\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
