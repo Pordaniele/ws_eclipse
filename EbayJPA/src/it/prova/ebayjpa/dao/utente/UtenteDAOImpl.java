@@ -103,4 +103,15 @@ public class UtenteDAOImpl implements UtenteDAO{
 //			return (Utente) query.getSingleResult();
 		}
 
+		
+		@Override
+		public Utente CaricaEagerAnnunci(long id) {
+			Query query = entityManager
+					.createQuery("select u FROM Utente u left join fetch u.ruoli join fetch u.annunci where u.id= :id");
+			query.setParameter("id", id);
+			
+			return query.getResultList().isEmpty() ? null : (Utente) query.getSingleResult();
+//			return (Utente) query.getSingleResult();
+		}
+
 }

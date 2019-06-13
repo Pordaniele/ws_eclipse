@@ -27,11 +27,21 @@
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div></li>
 		</ul>
+		<c:if test='${userInfo.username!= null }'>
 		 <ul class="nav navbar-nav navbar-right">
-            <li><p class="navbar-text">Utente: ${userInfo.username }(${userInfo.nome } ${userInfo.cognome })
+            <li><p class="navbar-text">Utente: ${userInfo.username }(${userInfo.nome } ${userInfo.cognome } Credito: ${userInfo.creditoResiduo }) 
             <a href="<%= request.getContextPath()%>/LogoutServlet">Logout</a></p> 
             </li>
           </ul>
+          </c:if>
+          
+          <c:if test='${userInfo.username== null }'>
+		 <ul class="nav navbar-nav navbar-right">
+            <li><p class="navbar-text">Utente: ${userInfo.username }(${userInfo.nome } ${userInfo.cognome })
+            <a href="<%= request.getContextPath()%>/login.jsp">Login</a></p> 
+            </li>
+          </ul>
+          </c:if>
 	</div>
 </nav>
 

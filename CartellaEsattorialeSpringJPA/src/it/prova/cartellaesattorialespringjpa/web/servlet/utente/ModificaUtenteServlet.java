@@ -82,7 +82,7 @@ public class ModificaUtenteServlet extends HttpServlet {
 		}
 		Utente inserUtente= UtenteDTO.buildUtenteFromDTO(temp);
 		inserUtente.setId(idInput);
-		utenteService.aggiorna(inserUtente);;
+		utenteService.aggiorna(inserUtente);
 		request.setAttribute("listaUtentiAttribute", utenteService.listAllUtenti());
 		destinazione = "/admin/result.jsp";
 

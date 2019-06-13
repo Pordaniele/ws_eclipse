@@ -9,4 +9,6 @@ public Utente executeLogin(String username,String password);
 	public Utente CaricaEager(long id);
 	
 	public Utente executeFetchLogin(String username, String password);
+	
+	public Utente CaricaEagerAnnunci(long id);
 }

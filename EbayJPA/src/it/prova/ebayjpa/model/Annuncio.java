@@ -50,6 +50,14 @@ public class Annuncio {
 		return dataAnnuncio;
 	}
 
+	public Set<Categoria> getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Set<Categoria> categorie) {
+		this.categorie = categorie;
+	}
+
 	public void setDataAnnuncio(Date dataAnnuncio) {
 		this.dataAnnuncio = dataAnnuncio;
 	}

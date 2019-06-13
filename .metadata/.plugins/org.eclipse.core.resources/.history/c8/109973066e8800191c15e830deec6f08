@@ -1,7 +1,0 @@
-package it.vinospring.dao;
-
-import it.vinospring.model.Vino;
-
-public interface VinoDAO extends IbaseDAO<Vino>{
-
-}

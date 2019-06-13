@@ -19,7 +19,7 @@
 		<div class="container-fluid">
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Id</dt>
-				<dd class="col-sm-9">${contribuenteSingoloAttributeName.id }</dd>
+				<dd class="col-sm-9">${dettaglioAnnuncio.id }</dd>
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Nome</dt>
