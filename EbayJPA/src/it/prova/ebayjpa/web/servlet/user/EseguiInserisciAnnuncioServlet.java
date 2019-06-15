@@ -61,7 +61,7 @@ public class EseguiInserisciAnnuncioServlet extends HttpServlet {
 		annuncioDTO.setPrezzo(prezzoInput);
 		annuncioDTO.setTestoAnnuncio(testoDaPagina);
 		String[] categorie = request.getParameterValues("categoriaId");
-		if (!annuncioDTO.validate().isEmpty() ) {
+		if (!annuncioDTO.validate().isEmpty() || !(categorie != null && categorie.length > 0)) {
 
 			request.setAttribute("messaggioDiErrore", annuncioDTO.validate());
 
@@ -75,7 +75,7 @@ public class EseguiInserisciAnnuncioServlet extends HttpServlet {
 		Date data = new Date();
 		c1.setDataAnnuncio(data);
 		c1.setApertoChiuso(true);
-		c1.setUtente(utenteService.CaricaEager(idUtente));
+		c1.setUtente(utenteService.caricaEager(idUtente));
 		if (categorie != null && categorie.length > 0) {
 			for (int i = 0; i < categorie.length; i++) {
 				c1.getCategorie().add(categoriaService.get(Long.parseLong(categorie[i])));
@@ -83,7 +83,9 @@ public class EseguiInserisciAnnuncioServlet extends HttpServlet {
 		}
 		annuncioService.insert(c1);
 		request.setAttribute("listaAnnunci", annuncioService.list());
-		destinazione = "result.jsp";
+		destinazione = "/result.jsp";
+		RequestDispatcher rd = request.getRequestDispatcher(destinazione);
+		rd.forward(request, response);
 	}
 
 }

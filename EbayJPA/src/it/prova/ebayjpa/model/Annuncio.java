@@ -22,7 +22,7 @@ public class Annuncio {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private boolean ApertoChiuso;
+	private boolean apertoChiuso;
 
 	private String testoAnnuncio;
 	@Temporal(TemporalType.DATE)
@@ -40,7 +40,7 @@ public class Annuncio {
 
 	public Annuncio(boolean apertoChiuso, String testoAnnuncio, double prezzo, Utente utente) {
 		super();
-		ApertoChiuso = apertoChiuso;
+		this.apertoChiuso = apertoChiuso;
 		this.testoAnnuncio = testoAnnuncio;
 		this.prezzo = prezzo;
 		this.utente = utente;
@@ -71,11 +71,11 @@ public class Annuncio {
 	}
 
 	public boolean isApertoChiuso() {
-		return ApertoChiuso;
+		return apertoChiuso;
 	}
 
 	public void setApertoChiuso(boolean apertoChiuso) {
-		ApertoChiuso = apertoChiuso;
+		this.apertoChiuso = apertoChiuso;
 	}
 
 	public String getTestoAnnuncio() {

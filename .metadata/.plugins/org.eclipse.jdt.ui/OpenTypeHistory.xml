@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=HelloAbitante/src&lt;it.helloabitante.web.servlet{ExecuteInsertAbitanteServlet.java[ExecuteInsertAbitanteServlet" modifiers="1" timestamp="1559805462564"/>
+<typeInfo handle="=EbayJPA/src&lt;it.prova.ebayjpa.service.acquisto{AcquistoService.java[AcquistoService" modifiers="513" timestamp="1560501865207"/>
+<typeInfo handle="=EbayJPA/src&lt;it.prova.ebayjpa.model{Annuncio.java[Annuncio" modifiers="1" timestamp="1560499996095"/>
 </typeInfoHistroy>

@@ -6,6 +6,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["testoAnnuncioInput"].value;
+  if (x == "") {
+    alert("devi inserire il testo annuncio");
+    return false;
+  }
+}
+</script>
 </head>
 <body>
 	<div class="container">
@@ -28,8 +37,8 @@
 			</div>
 
 
-			<form class="form-horizontal" action="EseguiInserisciAnnuncioServlet"
-				method="post">
+			<form name="myForm" class="form-horizontal" action="EseguiInserisciAnnuncioServlet"
+				method="post" onsubmit="return validateForm()">
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="testoAnnuncioId">Annuncio:</label>
 					<div class="col-sm-4">

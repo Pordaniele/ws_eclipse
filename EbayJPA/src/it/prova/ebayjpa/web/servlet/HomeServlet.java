@@ -18,7 +18,7 @@ import it.prova.ebayjpa.service.categoria.CategoriaService;
 /**
  * Servlet implementation class HomeServlet
  */
-@WebServlet("/")
+@WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Autowired

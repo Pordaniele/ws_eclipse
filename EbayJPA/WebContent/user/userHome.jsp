@@ -8,6 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div
+				class="alert alert-danger alert-dismissible fade show ${messaggioDiErrore != null?'':'d-none' }"
+				role="alert">
+				<c:forEach items="${messaggioDiErrore }" var="item">
+					<p>${item }</p>
+				</c:forEach>
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
 	<div class="container">
 		<%@ include file="../header.jsp"%>
 		<div class="alert alert-danger ${messaggio==null?'d-none':''}"
@@ -18,7 +29,7 @@
 					${userInfo.cognome } ${userInfo.creditoResiduo }</h1>
 				<p>
 					<a class="btn btn-primary btn-lg"
-						href="<%=request.getContextPath() + "/"%>" role="button">Ricerca
+						href="<%=request.getContextPath() %>" role="button">Ricerca
 						&raquo;</a>
 				</p>
 				
@@ -28,7 +39,7 @@
 				</p>
 				<p>
 					<a class="btn btn-primary btn-lg"
-						href="<%=request.getContextPath() + "/PrepareSearchContribuenteServlet"%>"
+						href="<%=request.getContextPath() + "/PrepareCronologiaAcquistiServlet"%>"
 						role="button">Storico aquisti &raquo;</a>
 				</p>
 			</div>
@@ -42,7 +53,7 @@
 					<h1 class="display-4">Gestione Utente</h1>
 					<p>
 						<a class="btn btn-primary btn-lg"
-							href="<%=request.getContextPath() + "/admin/PrepareSearchUtenteServlet"%>"
+							href="<%=request.getContextPath() + "/admin/PrepareSearchUtentiServlet"%>"
 							role="button">Vai alla Gestione &raquo;</a>
 					</p>
 				</div>

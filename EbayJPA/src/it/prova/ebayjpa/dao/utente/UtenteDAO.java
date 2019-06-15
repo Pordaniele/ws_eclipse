@@ -6,9 +6,9 @@ import it.prova.ebayjpa.model.Utente;
 public interface UtenteDAO extends IBaseDAO<Utente>{
 public Utente executeLogin(String username,String password);
 	
-	public Utente CaricaEager(long id);
+	public Utente caricaEager(long id);
 	
 	public Utente executeFetchLogin(String username, String password);
 	
-	public Utente CaricaEagerAnnunci(long id);
+	public Utente caricaEagerAnnunci(long id);
 }

@@ -139,6 +139,10 @@ public class UtenteDTO {
 			if (StringUtils.isEmpty(this.getCognome())) {
 				listaErrori.add("Cognome non valido");
 			}
+			if(creditoResiduo<0) {
+				listaErrori.add("Credito non valido");
+			}
+			
 			return listaErrori;
 		}
 

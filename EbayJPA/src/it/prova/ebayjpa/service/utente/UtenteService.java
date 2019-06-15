@@ -2,6 +2,7 @@ package it.prova.ebayjpa.service.utente;
 
 import java.util.List;
 
+import it.prova.ebayjpa.model.Annuncio;
 import it.prova.ebayjpa.model.Utente;
 
 public interface UtenteService {
@@ -20,9 +21,12 @@ public interface UtenteService {
 
 	public Utente eseguiAccesso(String username, String password);
 
-	public Utente CaricaEager(long id);
+	public Utente caricaEager(long id);
 
 	public Utente executeFetchLogin(String username, String password);
 	
-	public Utente CaricaEagerAnnunci(long id);
+	public Utente caricaEagerAnnunci(long id);
+	
+	
+	
 }

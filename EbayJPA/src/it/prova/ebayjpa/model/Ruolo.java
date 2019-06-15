@@ -32,6 +32,10 @@ import javax.persistence.Table;
 			this.codice = codice;
 		}
 
+	public Ruolo (String codice) {
+		this.codice=codice;
+	}
+
 		public long getId() {
 			return id;
 		}

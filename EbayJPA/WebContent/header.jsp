@@ -3,7 +3,7 @@
 
 <!-- Static navbar -->
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-	<a class="navbar-brand" href="<%= request.getContextPath()%>/home.jsp">Gestione Cartelle Esattoriali</a>
+	<a class="navbar-brand" href="<%= request.getContextPath()%>/home.jsp">EbayJPA</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"

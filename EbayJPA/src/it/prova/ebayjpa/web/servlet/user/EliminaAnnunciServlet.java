@@ -43,7 +43,7 @@ public class EliminaAnnunciServlet extends HttpServlet {
 
 		Long idPagina = Long.parseLong((String) request.getParameter("idAnnuncio"));
 		Annuncio c1=annuncioService.caricaEager(idPagina);
-
+		
 		annuncioService.delete(c1);
 		
 		request.setAttribute("listaAnnunci",annuncioService.list());

@@ -15,6 +15,7 @@ public class Categoria {
 	@Column(unique = true)
 	private String codice;
 	
+	
 	public Categoria() {}
 	
 	public Categoria(String descrizione, String codice) {

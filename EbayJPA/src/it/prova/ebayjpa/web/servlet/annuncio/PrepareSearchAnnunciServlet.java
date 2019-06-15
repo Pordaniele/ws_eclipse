@@ -38,21 +38,16 @@ public class PrepareSearchAnnunciServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Long idTemp = Long.parseLong((String) request.getParameter("idUtente"));
-		Utente c1 = utenteService.CaricaEagerAnnunci(idTemp);
+		Utente c1 = utenteService.caricaEagerAnnunci(idTemp);
 		
 		request.setAttribute("listaAnnunci", c1.getAnnunci());
 		RequestDispatcher rd = request.getRequestDispatcher("/user/ricercaAnnunci.jsp");
 		rd.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

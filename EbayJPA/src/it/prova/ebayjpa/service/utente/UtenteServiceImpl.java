@@ -2,18 +2,29 @@ package it.prova.ebayjpa.service.utente;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import it.prova.ebayjpa.dao.annuncio.AnnuncioDAO;
 import it.prova.ebayjpa.dao.utente.UtenteDAO;
+import it.prova.ebayjpa.dto.AcquistoDTO;
+import it.prova.ebayjpa.model.Acquisto;
+import it.prova.ebayjpa.model.Annuncio;
 import it.prova.ebayjpa.model.Utente;
 
 @Component
 public class UtenteServiceImpl implements UtenteService{
 
+	@PersistenceContext
+	private EntityManager entityManager;
 	@Autowired
 	private UtenteDAO utenteDAO;
+	@Autowired
+	private AnnuncioDAO annuncioDAO;
 
 	@Transactional(readOnly = true)
 	public List<Utente> listAllUtenti() {
@@ -58,13 +69,15 @@ public class UtenteServiceImpl implements UtenteService{
 
 	@Transactional(readOnly = true)
 	@Override
-	public Utente CaricaEager(long id) {
-		return utenteDAO.CaricaEager(id);
+	public Utente caricaEager(long id) {
+		return utenteDAO.caricaEager(id);
 	}
 	@Transactional(readOnly = true)
 	@Override
-	public Utente CaricaEagerAnnunci(long id) {
-		return utenteDAO.CaricaEagerAnnunci(id);
+	public Utente caricaEagerAnnunci(long id) {
+		return utenteDAO.caricaEagerAnnunci(id);
 	}
 
+
+	
 }

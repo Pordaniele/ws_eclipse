@@ -10,6 +10,7 @@ import org.apache.commons.lang.StringUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Example.PropertySelector;
 import org.hibernate.type.Type;
 import org.springframework.stereotype.Component;
@@ -63,9 +64,12 @@ public class UtenteDAOImpl implements UtenteDAO{
 				// Number
 				if (object instanceof Integer)
 					return ((Integer) object) != 0;
+				//
+				if (object instanceof Double)
+					return ((Double) object)!=0;
 				return true;
 			}
-		};Example utenteExample = Example.create(utenteInstance).setPropertySelector(ps);
+		};Example utenteExample = Example.create(utenteInstance).setPropertySelector(ps).enableLike(MatchMode.ANYWHERE);
 		Criteria criteria = session.createCriteria(Utente.class).add(utenteExample);
 		return criteria.list();
 	}
@@ -94,7 +98,7 @@ public class UtenteDAOImpl implements UtenteDAO{
 		}
 
 		@Override
-		public Utente CaricaEager(long id) {
+		public Utente caricaEager(long id) {
 			Query query = entityManager
 					.createQuery("select u FROM Utente u left join fetch u.ruoli  where u.id= :id");
 			query.setParameter("id", id);
@@ -105,9 +109,9 @@ public class UtenteDAOImpl implements UtenteDAO{
 
 		
 		@Override
-		public Utente CaricaEagerAnnunci(long id) {
+		public Utente caricaEagerAnnunci(long id) {
 			Query query = entityManager
-					.createQuery("select u FROM Utente u left join fetch u.ruoli join fetch u.annunci where u.id= :id");
+					.createQuery("select u FROM Utente u left join fetch u.ruoli left join fetch u.annunci left join fetch u.acquisti where u.id= :id");
 			query.setParameter("id", id);
 			
 			return query.getResultList().isEmpty() ? null : (Utente) query.getSingleResult();

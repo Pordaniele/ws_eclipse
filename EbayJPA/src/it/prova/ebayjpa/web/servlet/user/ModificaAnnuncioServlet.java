@@ -81,7 +81,7 @@ public class ModificaAnnuncioServlet extends HttpServlet {
 		annuncioDTO.setDataAnnuncio(dataDaPagina);
 		annuncioDTO.setApertoChiuso(true);
 		String []categorie=request.getParameterValues("categoriaId");
-		if (!annuncioDTO.validate().isEmpty() || !(categorie != null && categorie.length<= 0)) {
+		if (!annuncioDTO.validate().isEmpty() || !(categorie != null && categorie.length> 0)) {
 			
 			request.setAttribute("messaggioDiErrore", annuncioDTO.validate());
 			Annuncio c = annuncioService.caricaEager(idInput);
@@ -93,7 +93,7 @@ public class ModificaAnnuncioServlet extends HttpServlet {
 			return;
 		} 
 		Annuncio c1 =AnnuncioDTO.buildAnnuncioFromDto(annuncioDTO);
-		c1.setUtente(utenteService.CaricaEager(idUtente));
+		c1.setUtente(utenteService.caricaEager(idUtente));
 		c1.setId(idInput);
 		
 		if(categorie != null && categorie.length> 0) {

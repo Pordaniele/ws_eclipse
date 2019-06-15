@@ -32,7 +32,7 @@
 					<td><a
 						href="VisualizzaDettaglioAnnuncioServlet?idAnnuncio=${item.id }"
 						class="btn btn-info">Dettaglio</a> <a
-						href="PreparaModificaCartellaServlet?idCartella=${item.id }"
+						href="PrepareCompraServlet?idAnnuncio=${item.id }"
 						class="btn btn-info">Acquista</a> <a
 						href="PreparaEliminaCartellaServlet?idCartella=${item.id }"
 						class="btn btn-info">Elimina</a></td>

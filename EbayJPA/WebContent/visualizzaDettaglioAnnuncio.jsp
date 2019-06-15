@@ -43,9 +43,8 @@
 				<dd class="col-sm-9"><c:forEach items="${dettaglioAnnuncio.categorie }" var="item">${item.descrizione }</c:forEach></dd>
 			</dl>	
 		</div>
-					<a
-						href="PrepareCompraServlet?idAnnuncio=${item.id }"
-						class="btn btn-info">Acquista</a>
+					<a href="<%= request.getContextPath()%>/PrepareCompraServlet?idAnnuncio=${dettaglioAnnuncio.id }"
+						class="btn btn-info">Acquista ${dettaglioAnnuncio.id }</a>
 	
 	<a href="<%= request.getContextPath()%>/home.jsp" class="btn btn-info">Torna alla pagina
 		iniziale</a>
