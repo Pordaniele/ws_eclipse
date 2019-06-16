@@ -8,11 +8,15 @@
 <title>Insert title here</title>
 <script>
 function validateForm() {
-  var x = document.forms["myForm"]["testoAnnuncioInput"].value;
-  if (x == "") {
-    alert("devi inserire il testo annuncio");
-    return false;
-  }
+	
+  var testoAnnuncio = document.forms["myForm"]["testoAnnuncioInput"].value;
+
+    if ((testoAnnuncio == "") || (testoAnnuncio == "undefined")) {
+    	alert("Il campo Nome è obbligatorio.");
+    	document.forms["myForm"]["testoAnnuncioInput"].focus();
+    	return false;
+    	}
+ 
 }
 </script>
 </head>

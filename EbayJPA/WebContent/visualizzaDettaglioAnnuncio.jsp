@@ -46,7 +46,7 @@
 					<a href="<%= request.getContextPath()%>/PrepareCompraServlet?idAnnuncio=${dettaglioAnnuncio.id }"
 						class="btn btn-info">Acquista ${dettaglioAnnuncio.id }</a>
 	
-	<a href="<%= request.getContextPath()%>/home.jsp" class="btn btn-info">Torna alla pagina
+	<a href="${pageContext.request.contextPath}/home" class="btn btn-info">Torna alla pagina
 		iniziale</a>
 </body>
 </html>

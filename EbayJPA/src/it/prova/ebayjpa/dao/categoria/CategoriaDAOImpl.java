@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Example.PropertySelector;
 import org.hibernate.type.Type;
 import org.springframework.stereotype.Component;
@@ -68,7 +69,7 @@ public class CategoriaDAOImpl implements CategoriaDAO {
 			}
 		};
 
-		Example categoriaExample = Example.create(categoriaInstance).setPropertySelector(ps);
+		Example categoriaExample = Example.create(categoriaInstance).setPropertySelector(ps).enableLike(MatchMode.ANYWHERE);
 		Criteria criteria = session.createCriteria(Categoria.class).add(categoriaExample);
 		return criteria.list();
 	}

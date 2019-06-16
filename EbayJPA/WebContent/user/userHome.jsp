@@ -29,7 +29,7 @@
 					${userInfo.cognome } ${userInfo.creditoResiduo }</h1>
 				<p>
 					<a class="btn btn-primary btn-lg"
-						href="<%=request.getContextPath() %>" role="button">Ricerca
+						href="${pageContext.request.contextPath}/home" role="button">Ricerca
 						&raquo;</a>
 				</p>
 				
@@ -50,11 +50,11 @@
 		<c:if test='${userInfo.isAdmin()}'>
 			<div class="jumbotron">
 				<div class="container">
-					<h1 class="display-4">Gestione Utente</h1>
+					<h1 class="display-4">Gestione Admin</h1>
 					<p>
 						<a class="btn btn-primary btn-lg"
-							href="<%=request.getContextPath() + "/admin/PrepareSearchUtentiServlet"%>"
-							role="button">Vai alla Gestione &raquo;</a>
+							href="<%=request.getContextPath() + "/admin/AdminHomeServlet"%>"
+							role="button">Vai alla Gestione  &raquo;</a>
 					</p>
 				</div>
 			</div>

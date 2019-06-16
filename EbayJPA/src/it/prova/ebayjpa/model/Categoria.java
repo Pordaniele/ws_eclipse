@@ -1,10 +1,16 @@
 package it.prova.ebayjpa.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Categoria {
@@ -14,7 +20,9 @@ public class Categoria {
 	private String descrizione;
 	@Column(unique = true)
 	private String codice;
-	
+	@ManyToMany
+	@JoinTable(name = "annuncio_categoria", joinColumns = @JoinColumn(name = "categoria_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "annuncio_id", referencedColumnName = "id"))
+	private Set<Annuncio> annunci = new HashSet<>(0);
 	
 	public Categoria() {}
 	

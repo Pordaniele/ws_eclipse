@@ -36,8 +36,6 @@
 <fullyQualifiedTypeName name="org.apache.commons.lang.StringUtils"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="it.prova.ebayjpa.model.Categoria"/>
-<fullyQualifiedTypeName name="it.prova.ebayjpa.service.categoria.CategoriaService"/>
 <fullyQualifiedTypeName name="it.prova.ebayjpa.dto.AnnuncioDTO"/>
 <fullyQualifiedTypeName name="javafx.scene.chart.PieChart.Data"/>
 <fullyQualifiedTypeName name="javafx.scene.chart.XYChart.Data"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="it.prova.ebayjpa.dto.UtenteDTO"/>
 <fullyQualifiedTypeName name="it.prova.ebayjpa.model.Utente"/>
 <fullyQualifiedTypeName name="it.prova.ebayjpa.model.Ruolo"/>
+<fullyQualifiedTypeName name="it.prova.ebayjpa.service.categoria.CategoriaService"/>
+<fullyQualifiedTypeName name="it.prova.ebayjpa.model.Categoria"/>
 </qualifiedTypeNameHistroy>

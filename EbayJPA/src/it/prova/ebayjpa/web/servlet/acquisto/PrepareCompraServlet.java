@@ -51,7 +51,7 @@ public class PrepareCompraServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		if (request.getSession().getAttribute("userInfo") == null) {
-			response.sendRedirect(request.getContextPath());
+			response.sendRedirect(request.getContextPath()+"/login.jsp");
 			return;
 		}
 		String destinazione = null;
