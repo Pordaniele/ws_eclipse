@@ -13,6 +13,17 @@
 		<%@ include file="../../header.jsp"%>
 
 		<div class="page-header">
+		<div
+				class="alert alert-danger alert-dismissible fade show ${messaggioDiErrore != null?'':'d-none' }"
+				role="alert">
+				<c:forEach items="${messaggioDiErrore }" var="item">
+					<p>${item }</p>
+				</c:forEach>
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
 			<h3>Pagina Ricerca Categorie</h3>
 		</div>
 

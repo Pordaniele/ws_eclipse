@@ -49,6 +49,14 @@ public class Categoria {
 	public void setCodice(String codice) {
 		this.codice = codice;
 	}
+
+	public Set<Annuncio> getAnnunci() {
+		return annunci;
+	}
+
+	public void setAnnunci(Set<Annuncio> annunci) {
+		this.annunci = annunci;
+	}
 	
 	
 }

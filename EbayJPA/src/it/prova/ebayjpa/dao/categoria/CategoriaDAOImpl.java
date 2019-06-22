@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.Criteria;
@@ -15,6 +16,7 @@ import org.hibernate.type.Type;
 import org.springframework.stereotype.Component;
 
 import it.prova.ebayjpa.model.Categoria;
+import it.prova.ebayjpa.model.Utente;
 
 @Component
 public class CategoriaDAOImpl implements CategoriaDAO {
@@ -72,6 +74,16 @@ public class CategoriaDAOImpl implements CategoriaDAO {
 		Example categoriaExample = Example.create(categoriaInstance).setPropertySelector(ps).enableLike(MatchMode.ANYWHERE);
 		Criteria criteria = session.createCriteria(Categoria.class).add(categoriaExample);
 		return criteria.list();
+	}
+
+	@Override
+	public Categoria caricaEager(long id) {
+		Query query = entityManager
+				.createQuery("select c FROM Categoria c left join fetch c.annunci a left join fetch a.categorie where c.id= :id");
+		query.setParameter("id", id);
+		
+		return query.getResultList().isEmpty() ? null : (Categoria) query.getSingleResult();
+//		return (Utente) query.getSingleResult();
 	}
 	
 

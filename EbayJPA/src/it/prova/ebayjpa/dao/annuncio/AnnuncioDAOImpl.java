@@ -17,6 +17,7 @@ import org.hibernate.type.Type;
 import org.springframework.stereotype.Component;
 
 import it.prova.ebayjpa.model.Annuncio;
+import it.prova.ebayjpa.model.Categoria;
 import it.prova.ebayjpa.model.Utente;
 @Component
 public class AnnuncioDAOImpl implements AnnuncioDAO{
@@ -105,7 +106,14 @@ public class AnnuncioDAOImpl implements AnnuncioDAO{
 
 	
 	}
-	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Annuncio> cercaAnnuncioPerCategoria(Categoria categoria) {
+		Query query = entityManager
+				.createQuery("select a FROM Annuncio a left join fetch a.categorie c where c.id = :id");
+		query.setParameter("id", categoria.getId());
+		return  (ArrayList<Annuncio>) query.getResultList();
+	}
 	
 	@Override
 	public Annuncio caricaEager(long id) {

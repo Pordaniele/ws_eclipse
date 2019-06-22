@@ -71,10 +71,19 @@ public class ExecuteRegistraUtenteServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/registraUtente.jsp");
 			rd.forward(request, response);
 			return;}
-		
+		for(Utente item:utenteService.listAllUtenti()) {
+			if(temp.getUsername().equals(item.getUsername())){
+				request.setAttribute("messaggioDiErrore", "esiste gia questo username");
+				
+				RequestDispatcher rd = request.getRequestDispatcher("/registraUtente.jsp");
+				rd.forward(request, response);
+				return;
+			}
+		}
 		Utente insertUtente =UtenteDTO.buildUtenteFromDTO(temp);
 		Ruolo temp2= ruoloService.findByExample(new Ruolo(Ruolo.CLASSIC_USER_ROLE)).get(0);
 		insertUtente.getRuoli().add(temp2);
+		
 		utenteService.inserisciNuovo(insertUtente);
 		
 		

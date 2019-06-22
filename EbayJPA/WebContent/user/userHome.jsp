@@ -34,7 +34,7 @@
 				</p>
 				
 					<a class="btn btn-primary btn-lg"
-						href="user/PrepareSearchAnnunciServlet?idUtente=${userInfo.id }"
+						href="${pageContext.request.contextPath}/user/PrepareSearchAnnunciServlet?idUtente=${userInfo.id }"
 						role="button">Gestione annunci &raquo;</a>
 				</p>
 				<p>

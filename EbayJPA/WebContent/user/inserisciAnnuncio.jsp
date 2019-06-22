@@ -6,19 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<script>
-function validateForm() {
-	
-  var testoAnnuncio = document.forms["myForm"]["testoAnnuncioInput"].value;
 
-    if ((testoAnnuncio == "") || (testoAnnuncio == "undefined")) {
-    	alert("Il campo Nome è obbligatorio.");
-    	document.forms["myForm"]["testoAnnuncioInput"].focus();
-    	return false;
-    	}
- 
-}
-</script>
 </head>
 <body>
 	<div class="container">
@@ -53,7 +41,7 @@ function validateForm() {
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="prezzoInputId">Prezzo:</label>
 					<div class="col-sm-4">
-						<input class="form-control" value="" type="text"
+						<input class="form-control" value="" type="number"
 							id="prezzoInputId" name="prezzoInput">
 					</div>
 				</div>
@@ -77,4 +65,24 @@ function validateForm() {
 		</div>
 	</div>
 </body>
+<script>
+function validateForm() {
+	
+  var testoAnnuncio = document.forms["myForm"]["testoAnnuncioInput"].value;
+  var prezzo = document.forms["myForm"]["prezzoInput"].value;
+
+    if ((testoAnnuncio == "") || (testoAnnuncio == "undefined")) {
+    	alert("Il campo Nome è obbligatorio.");
+    	document.forms["myForm"]["testoAnnuncioInput"].focus();
+    	return false;
+    	}
+    if((prezzo<=0)){
+    	alert("inserisci un numero");
+    	document.forms["myForm"]["prezzoInput"].focus();
+    	return false;
+    	}
+    
+ 
+}
+</script>
 </html>

@@ -9,28 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/admin/PrepareSearchCategorieServlet")
 public class PrepareSearchCategorieServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PrepareSearchCategorieServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-				RequestDispatcher rd = request.getRequestDispatcher("/admin/categorie/homeCategorie.jsp");
-				rd.forward(request, response);
+
+	public PrepareSearchCategorieServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		RequestDispatcher rd = request.getRequestDispatcher("/admin/categorie/homeCategorie.jsp");
+		rd.forward(request, response);
+	}
 
 }

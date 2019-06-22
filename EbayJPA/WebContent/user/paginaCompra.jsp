@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -7,7 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 
+		<%@ include file="../header.jsp"%>
+<div class="page-header">
 
 <div
 				class="alert alert-danger alert-dismissible fade show ${messaggioDiErrore != null?'':'d-none' }"
@@ -53,8 +58,7 @@
 			</div>
 
 
-			<button type="submit" class="btn btn-primary btn-md">Effettua
-				Ricerca</button>
+			<button type="submit" class="btn btn-primary btn-md">compra</button>
 	</form>
 
 

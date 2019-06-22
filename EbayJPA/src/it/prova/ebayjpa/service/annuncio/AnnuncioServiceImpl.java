@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import it.prova.ebayjpa.dao.annuncio.AnnuncioDAO;
 import it.prova.ebayjpa.model.Annuncio;
+import it.prova.ebayjpa.model.Categoria;
 
 @Component
 public class AnnuncioServiceImpl implements AnnuncioService {
@@ -54,6 +55,10 @@ public class AnnuncioServiceImpl implements AnnuncioService {
 	@Override
 	public Annuncio caricaEager(long id) {
 		return annuncioDAO.caricaEager(id);
+	}
+	@Override
+	public List<Annuncio> cercaAnnuncioPerCategoria(Categoria categoria) {
+		return annuncioDAO.cercaAnnuncioPerCategoria(categoria);
 	}
 
 }

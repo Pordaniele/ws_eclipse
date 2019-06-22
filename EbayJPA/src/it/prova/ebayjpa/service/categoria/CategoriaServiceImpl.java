@@ -44,5 +44,10 @@ public class CategoriaServiceImpl implements CategoriaService{
 	public List<Categoria> findByExample(Categoria categoriaInstance) {
 		return categoriaDAO.findByExample(categoriaInstance);
 	}
+	@Transactional(readOnly = true)
+	@Override
+	public Categoria caricaEager(long id) {
+		return categoriaDAO.caricaEager(id);
+	}
 
 }

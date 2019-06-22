@@ -19,9 +19,6 @@ import it.prova.ebayjpa.model.Utente;
 import it.prova.ebayjpa.service.ruolo.RuoloService;
 import it.prova.ebayjpa.service.utente.UtenteService;
 
-/**
- * Servlet implementation class ExecuteModificaUtenteServlet
- */
 @WebServlet("/admin/ExecuteModificaUtenteServlet")
 public class ExecuteModificaUtenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -77,9 +74,22 @@ public class ExecuteModificaUtenteServlet extends HttpServlet {
 				temp.getRuoli().add(ruoloService.get(Long.parseLong(ruoli[i])));
 			}
 		}
+		for (Utente item : utenteService.listAllUtenti()) {
+			if (temp.getId() != item.getId())
+				if (temp.getUsername().equals(item.getUsername())) {
+
+					request.setAttribute("messaggioDiErrore", "esiste gia questo username");
+					Utente c = utenteService.caricaEagerAnnunci(idInput);
+					request.setAttribute("utenteDaModificare", c);
+					request.setAttribute("listaRuoli", ruoloService.list());
+					RequestDispatcher rd = request.getRequestDispatcher("/admin/modificaUtente.jsp");
+					rd.forward(request, response);
+					return;
+				}
+		}
 		Utente inserUtente = UtenteDTO.buildUtenteFromDTO(temp);
 		inserUtente.setId(idInput);
-		Utente utenteTemp= utenteService.caricaEagerAnnunci(idInput);
+		Utente utenteTemp = utenteService.caricaEagerAnnunci(idInput);
 		inserUtente.setAcquisti(utenteTemp.getAcquisti());
 		inserUtente.setDataRegistrazione(utenteTemp.getDataRegistrazione());
 		inserUtente.setAnnunci(utenteTemp.getAnnunci());

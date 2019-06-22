@@ -30,7 +30,7 @@
 					<td>${item.descrizione }</td>
 					<td>${item.prezzo }</td>
 					<td><a
-						href="VisualizzaDettaglioAnnuncioServlet?idAnnuncio=${item.id }"
+						href="${pageContext.request.contextPath}/visualizzaDettaglioAcquistoServlet?idAcquisto=${item.id }"
 						class="btn btn-info">Dettaglio</a>
 						
 				</tr>

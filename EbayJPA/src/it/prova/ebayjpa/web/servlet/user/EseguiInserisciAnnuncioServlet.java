@@ -16,6 +16,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import it.prova.ebayjpa.dto.AnnuncioDTO;
 import it.prova.ebayjpa.model.Annuncio;
+import it.prova.ebayjpa.model.Utente;
 import it.prova.ebayjpa.service.annuncio.AnnuncioService;
 import it.prova.ebayjpa.service.categoria.CategoriaService;
 import it.prova.ebayjpa.service.utente.UtenteService;
@@ -82,9 +83,10 @@ public class EseguiInserisciAnnuncioServlet extends HttpServlet {
 			}
 		}
 		annuncioService.insert(c1);
-		request.setAttribute("listaAnnunci", annuncioService.list());
-		destinazione = "/result.jsp";
-		RequestDispatcher rd = request.getRequestDispatcher(destinazione);
+		Utente utente = utenteService.caricaEagerAnnunci(idUtente);
+
+		request.setAttribute("listaAnnunci", utente.getAnnunci());
+		RequestDispatcher rd = request.getRequestDispatcher("/user/ricercaAnnunci.jsp");
 		rd.forward(request, response);
 	}
 

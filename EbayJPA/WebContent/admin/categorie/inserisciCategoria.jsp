@@ -28,9 +28,9 @@
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
-		<form class="form-horizontal"
+		<form name="myForm" class="form-horizontal"
 			action="${pageContext.request.contextPath}/admin/ExecuteInserisciCategoriaServlet"
-			method="post">
+			method="post" onsubmit="return validateForm()">
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="descrizioneInputId">Descrizione:</label>
 				<div class="col-sm-4">
@@ -54,3 +54,22 @@
 
 	<!-- /.container -->
 </body>
+<script>
+function validateForm() {
+	
+  var descrizione = document.forms["myForm"]["descrizioneInput"].value;
+  var codice = document.forms["myForm"]["codiceInput"].value;
+ 
+  
+    if ((descrizione == "") || (descrizione == "undefined")) {
+    	alert("Il campo descrizione è obbligatorio.");
+    	document.forms["myForm"]["nomeInput"].focus();
+    	return false;
+    	}
+    if ((codice == "") || (codice == "undefined")) {
+    	alert("Il campo codice è obbligatorio.");
+    	document.forms["myForm"]["cognomeInput"].focus();
+    	return false;
+    } 
+}
+</script>

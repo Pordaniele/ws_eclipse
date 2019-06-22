@@ -33,9 +33,8 @@
 						href="VisualizzaDettaglioAnnuncioServlet?idAnnuncio=${item.id }"
 						class="btn btn-info">Dettaglio</a> <a
 						href="PrepareCompraServlet?idAnnuncio=${item.id }"
-						class="btn btn-info">Acquista</a> <a
-						href="PreparaEliminaCartellaServlet?idCartella=${item.id }"
-						class="btn btn-info">Elimina</a></td>
+						class="btn btn-info">Acquista</a>
+						</td>
 				</tr>
 
 			</c:forEach>

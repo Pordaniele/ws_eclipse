@@ -40,15 +40,6 @@ public class ExecuteInserisciUtenteServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("oleeeeee: ").append(request.getContextPath());
-	}
-
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeDaPagina = request.getParameter("nomeInput");
 		String cognomeDaPagina = request.getParameter("cognomeInput");
@@ -78,6 +69,15 @@ public class ExecuteInserisciUtenteServlet extends HttpServlet {
 				temp.getRuoli().add(ruoloService.get(Long.parseLong(ruoli[i])));
 			}
 	
+		}
+		for(Utente item:utenteService.listAllUtenti()) {
+			if(temp.getUsername().equals(item.getUsername())){
+				request.setAttribute("messaggioDiErrore", "esiste gia questo username");
+				request.setAttribute("listaRuoli", ruoloService.list());
+				RequestDispatcher rd = request.getRequestDispatcher("/admin/inserisciUtente.jsp");
+				rd.forward(request, response);
+				return;
+			}
 		}
 		Utente insertUtente =UtenteDTO.buildUtenteFromDTO(temp);
 		utenteService.inserisciNuovo(insertUtente);

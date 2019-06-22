@@ -44,6 +44,16 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label class="control-label col-sm-2" for="ContribuenteInputId">Contribuente:</label>
+				<select name="contribuenteInput">
+					<option value="-1">----SELEZIONA Municipio----</option>
+
+					<c:forEach items="${listaMunicipi }" var="item">
+						<option value="${item.id }">${item.descrizione }</option>
+
+					</c:forEach>
+				</select>
+			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-primary btn-md">Inserisci</button>
 				</div>

@@ -28,9 +28,9 @@
 			</div>
 
 
-			<form class="form-horizontal" action="${pageContext.request.contextPath}/admin/ExecuteModificaUtenteServlet"
-				method="post">
-				<div class="form-group">
+			<form name="myForm" class="form-horizontal" action="${pageContext.request.contextPath}/admin/ExecuteModificaUtenteServlet"
+				method="post" onsubmit="return validateForm()">
+				<div class="form-group" onsubmit="return validateForm()">
 					<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>
 					<div class="col-sm-4">
 						<input class="form-control" value="${utenteDaModificare.nome}"
@@ -61,6 +61,14 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="control-label col-sm-2" for="passwordInputId2">Password:</label>
+					<div class="col-sm-4">
+						<input class="form-control"
+							value="${utenteDaModificare.password }" type="password"
+							id="passwordInputId2" name="passwordInput2">
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="control-label col-sm-2" for="creditoInputId">Credito:</label>
 					<div class="col-sm-4">
 						<input class="form-control"
@@ -83,4 +91,54 @@
 		</div>
 	</div>
 </body>
+<script>
+function validateForm() {
+	
+  var nome = document.forms["myForm"]["nomeInput"].value;
+  var cognome = document.forms["myForm"]["cognomeInput"].value;
+  var username = document.forms["myForm"]["usernameInput"].value;
+  var password = document.forms["myForm"]["passwordInput"].value;
+  var credito = document.forms["myForm"]["creditoInput"].value;
+  var confermaPassword =document.forms["myForm"]["passwordInput2"].value;
+  
+    if ((nome == "") || (nome == "undefined")) {
+    	alert("Il campo Nome è obbligatorio.");
+    	document.forms["myForm"]["nomeInput"].focus();
+    	return false;
+    	}
+    if ((cognome == "") || (cognome == "undefined")) {
+    	alert("Il campo cognome è obbligatorio.");
+    	document.forms["myForm"]["cognomeInput"].focus();
+    	return false;
+    	}
+    if ((username == "") || (username == "undefined")) {
+    	alert("Il campo username è obbligatorio.");
+    	document.forms["myForm"]["usernameInput"].focus();
+    	return false;
+    	}
+    if ((password == "") || (password == "undefined")) {
+    	alert("Il campo password è obbligatorio.");
+    	document.forms["myForm"]["passwordInput"].focus();
+    	return false;
+    	} 
+    if ((confermaPassword == "") || (confermaPassword == "undefined")) {
+    	alert("Il campo conferma password è obbligatorio.");
+    	document.forms["myForm"]["passwordInput2"].focus();
+    	return false;
+    	} 
+    if (!(confermaPassword === password)) {
+    	alert("le due password devono essere uguali");
+    	document.forms["myForm"]["passwordInput2"].focus();
+    	return false;
+    	} 
+    if((credito<=0)||(credito == "undefined")){
+    	alert("inserisci un numero valido");
+    	document.forms["myForm"]["creditoInput"].focus();
+    	return false;
+    	}
+    
+ 
+}
+</script>
+
 </html>

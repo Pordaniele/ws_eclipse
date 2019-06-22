@@ -13,6 +13,11 @@
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\corso\ws_eclipse\PokerOnline-master"/>
+			<item value="C:\corso\ws_eclipse\Java8WhatsNew"/>
+			<item value="C:\corso\ws_eclipse\WeatherObserver"/>
+			<item value="C:\corso\ws_eclipse\MunicipioAbitantiJPAStruts"/>
+			<item value="C:\corso\ws_eclipse\PrimoStruts"/>
 			<item value="C:\corso\ws_eclipse\ProvaFilter"/>
 			<item value="C:\corso\ws_eclipse\GestioneMunicipioSpringJPA"/>
 			<item value="C:\corso\ws_eclipse\PersonaSpringJPA"/>
@@ -27,12 +32,13 @@
 			<item value="C:\corso\ws_eclipse\ManyToManyJPA"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\corso\ws_eclipse\TavoloPoker\pom.xml"/>
 			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
 		<item key="ShowStatusLine" value="true"/>
-		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode/&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/GestioneMunicipioSpringDataMaven/src/main/webapp/WEB-INF/applicationContext.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/MunicipioAbitantiJPAStruts/WebContent/jsp/municipio/show.jsp&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
 		<item key="ShowDerived" value="false"/>
 		<item key="FilterByLocation" value="false"/>
 		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
