@@ -46,8 +46,8 @@ public class HomeController {
 		if (temp== null) {
 			return "login";
 		}else {
-			
-			session.setAttribute("userInfo", temp);
+			Utente utenteInSessione= utenteService.caricaUtentePerUsernamePasswordeRuolo(temp.getId());
+			session.setAttribute("userInfo", utenteInSessione);
 		return "home";
 		}
 	}

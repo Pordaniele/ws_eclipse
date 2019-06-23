@@ -112,10 +112,21 @@ public class TavoloCotroller {
 	
 	@RequestMapping(value ="delete", method = RequestMethod.GET)
     public String delete(@RequestParam("idTavolo") Long idTavolo, Model model){
-		Tavolo temp= tavoloService.caricaSingolo(idTavolo);
-		TavoloDTO tavoloDTO= TavoloDTO.buildDtoFromTavolo(temp);
-		model.addAttribute("tavoloCommand", tavoloDTO);
+		
+		
+		model.addAttribute("tavoloCommand",tavoloService.findGiocatori(idTavolo));
         return "/tavolo/delete";
+    }
+	
+	@RequestMapping(value ="confirmDelete", method = RequestMethod.GET)
+    public String confirmDelete(@RequestParam("idTavolo") Long idTavolo, Model model, HttpSession session){
+		Tavolo tavoloDaEliminare= tavoloService.findGiocatori(idTavolo);
+		if(!tavoloDaEliminare.getGiocatori().isEmpty()) {
+			return "/tavolo/search";
+		}
+		tavoloService.rimuovi(tavoloDaEliminare);
+		model.addAttribute("listTavoli", tavoloService.findByCreatore((Utente)session.getAttribute("userInfo")));
+		return "/tavolo/list";
     }
 	
 	}

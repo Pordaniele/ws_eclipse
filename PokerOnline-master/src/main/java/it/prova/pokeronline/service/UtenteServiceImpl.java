@@ -62,4 +62,14 @@ public class UtenteServiceImpl implements UtenteService {
 		return utenteRepository.findByUsernameAndPassword(username, password);
 	}
 
+	@Override
+	public Utente caricaUtentePerUsernamePasswordeRuolo(Long id) {
+		return utenteRepository.caricaUtentePerUsernamePasswordeRuolo(id);
+	}
+
+	@Override
+	public Utente findByUsername(String username) {
+		return utenteRepository.findByUsername(username);
+	}
+
 }

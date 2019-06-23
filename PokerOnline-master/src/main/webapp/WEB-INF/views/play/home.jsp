@@ -9,14 +9,14 @@
 <body>
 
 	<div class="container">
-		<%@ include file="header.jsp"%>
-		<c:if test='${userInfo.isAdmin()}'>
+		<%@ include file="../header.jsp"%>
+		<c:if test='${userInfo.isInGame()}'>
 			<div class="jumbotron">
 				<div class="container">
-					<h1 class="display-4">Gestione Utenti</h1>
+					<h1 class="display-4">Go to last game</h1>
 					<p>
 						<a class="btn btn-primary btn-lg"
-							href="${pageContext.request.contextPath}/admin/search"
+							href="game?idTavolo=${userInfo.tavoloGiocato.id }"
 							role="button">Vai alla Gestione Utenti &raquo;</a>
 					</p>
 				</div>
@@ -24,10 +24,10 @@
 		</c:if>
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="display-4">Gestione Tavoli</h1>
+				<h1 class="display-4">Compra Credito</h1>
 				<p>
 					<a class="btn btn-primary btn-lg"
-						href="${pageContext.request.contextPath}/tavolo/search"
+						href="${pageContext.request.contextPath}/play/credito"
 						role="button">Vai alla Gestione Tavoli &raquo;</a>
 				</p>
 			</div>
@@ -35,10 +35,10 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="display-4">Partita</h1>
+				<h1 class="display-4">Ricerca</h1>
 				<p>
 					<a class="btn btn-primary btn-lg"
-						href="${pageContext.request.contextPath}/play/home"
+						href="${pageContext.request.contextPath}/play/search"
 						role="button">Vai al Gioco &raquo;</a>
 				</p>
 			</div>
@@ -47,7 +47,7 @@
 
 
 
-		<%@ include file="footer.jsp"%>
+		<%@ include file="../footer.jsp"%>
 	</div>
 </body>
 </html>

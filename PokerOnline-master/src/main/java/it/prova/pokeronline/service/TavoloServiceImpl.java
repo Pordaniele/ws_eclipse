@@ -1,6 +1,8 @@
 package it.prova.pokeronline.service;
 
+import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -62,5 +64,22 @@ public class TavoloServiceImpl implements TavoloService {
 		
 		return tavoloRepository.findByCreatore(creatore);
 	}
+
+	@Override
+	public Tavolo findGiocatori(Long id) {
+		
+		return tavoloRepository.findGiocatori(id);
+	}
+
+	@Override
+	public List<Tavolo> findByGiocatori(Set<Utente> item) {
+	
+		return  findByGiocatori(item);
+	}
+
+//	@Override
+//	public List<Tavolo> findTavoliForCreatoreAndDataAndPartecipanti(String username, String username2, Date data) {
+//		return (List<Tavolo>) tavoloRepository.findTavoliForCreatoreAndDataAndPartecipanti(username, username2, data);
+//	}
 
 }

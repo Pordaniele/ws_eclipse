@@ -34,7 +34,7 @@ public class Utente {
 	private StatoUtenza statoUtenza;
 	@Temporal(TemporalType.DATE)
 	private Date dataRegistrazione;
-	private boolean inGioco;
+	
 
 	@ManyToMany
 	@JoinTable(name = "utente_ruolo", joinColumns = @JoinColumn(name = "utente_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "ruolo_id", referencedColumnName = "id"))
@@ -42,7 +42,7 @@ public class Utente {
 	private Set<Ruolo> ruoli = new HashSet<>(0);
 	private Integer esperienzaAccumulata;
 	private Double creditoAccumulato;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tavoloGiocato_id")
 	private Tavolo tavoloGiocato;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "creatore")
@@ -108,13 +108,7 @@ public class Utente {
 		this.dataRegistrazione = dataRegistrazione;
 	}
 
-	public boolean isInGioco() {
-		return inGioco;
-	}
 
-	public void setInGioco(boolean inGioco) {
-		this.inGioco = inGioco;
-	}
 
 	public Set<Ruolo> getRuoli() {
 		return ruoli;
@@ -155,5 +149,20 @@ public class Utente {
 	public void setTavoliCreati(Set<Tavolo> tavoliCreati) {
 		this.tavoliCreati = tavoliCreati;
 	}
-
+	public boolean isAdmin() {
+		for (Ruolo ruoloItem : ruoli) {
+			if(ruoloItem.getCodice().equals(Ruolo.ADMIN_ROLE))
+				return true;
+		}
+		return false;
+	}
+	
+	public boolean isInGame() {
+		
+			if(tavoloGiocato==null) {
+				return false;
+			}
+		return true;
+	}
+	
 }

@@ -59,6 +59,8 @@ C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\126389
 \CartellaEsattorialeSpringJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3032175856.index
 \MunicipioAbitantiJPAStruts\src
+C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2924238758.index
+\PokerOnline-master\src\main\java
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1618936302.index
 \gestioneLibro\src\main\java
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3728954782.index

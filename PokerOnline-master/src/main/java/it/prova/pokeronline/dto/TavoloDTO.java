@@ -1,6 +1,8 @@
 package it.prova.pokeronline.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,15 +20,26 @@ public class TavoloDTO {
 	private Date dataCreazione;
 	private Integer esperienzaMin;
 	private Double cifraMin;
-	
+	private Set<UtenteDTO> giocatori = new HashSet<>(0);
 	public TavoloDTO() {}
 
-public TavoloDTO(Long id, String denominazione, Date dataCreazione, Integer esperienzaMin, Double cifraMin) {
-	this.id=id;
-	this.denominazione=denominazione;
-	this.dataCreazione=dataCreazione;
-	this.esperienzaMin=esperienzaMin;
-	this.cifraMin=cifraMin;
+public TavoloDTO(Tavolo input) {
+	this.id=input.getId();
+	this.denominazione=input.getDenominazione();
+	this.dataCreazione=input.getDataCreazione();
+	this.esperienzaMin=input.getEsperienzaMin();
+	this.cifraMin=input.getCifraMin();
+	for (Utente item : input.getGiocatori()) {
+		this.giocatori.add(new UtenteDTO(item));
+	}
+}
+
+public Set<UtenteDTO> getGiocatori() {
+	return giocatori;
+}
+
+public void setGiocatori(Set<UtenteDTO> giocatori) {
+	this.giocatori = giocatori;
 }
 
 public Long getId() {
