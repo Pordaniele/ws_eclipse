@@ -101,11 +101,11 @@ public class AdminController {
 	public String update(@ModelAttribute("adminCommand") UtenteDTO utenteDTOInstance, BindingResult result, Model model
 	 ,HttpServletRequest request) {
 
-		// se la validazione fallisce
-//		new UtenteValidator().validate(utenteDTOInstance, result);
-//		if (result.hasErrors()) {
-//			return "admin/edit";
-//		}
+		//se la validazione fallisce
+		new UtenteValidator().validate(utenteDTOInstance, result);
+		if (result.hasErrors()) {
+			return "admin/edit";
+		}
 		String[] ruoli = request.getParameterValues("ruoli");
 		
 		Set<Ruolo> listaRuoli = new HashSet<Ruolo>();

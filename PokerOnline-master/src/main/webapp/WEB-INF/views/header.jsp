@@ -32,7 +32,7 @@
 		</ul>
 		 <ul class="nav navbar-nav navbar-right">
             <li><p class="navbar-text">Utente: ${userInfo.username }(${userInfo.nome } ${userInfo.cognome })
-            <a href="${pageContext.request.contextPath }/LogoutServlet">Logout</a></p> 
+            <a href="logout">Logout</a></p> 
             </li>
           </ul>
 	</div>

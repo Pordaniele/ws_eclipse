@@ -74,7 +74,7 @@ public class TavoloServiceImpl implements TavoloService {
 	@Override
 	public List<Tavolo> findByGiocatori(Set<Utente> item) {
 	
-		return  findByGiocatori(item);
+		return findByGiocatori(item);
 	}
 
 //	@Override

@@ -3,6 +3,7 @@ package it.prova.pokeronline.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,15 @@ public class HomeController {
 			session.setAttribute("userInfo", utenteInSessione);
 		return "home";
 		}
+	
 	}
+	
+	@RequestMapping(value = "logout", method = { RequestMethod.POST, RequestMethod.GET })
+	public ModelAndView logout(HttpSession session, HttpServletRequest request) {
+		request.getSession().invalidate();
+		return new ModelAndView("/");
+	}
+		
 	
 	
 	

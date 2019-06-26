@@ -1,4 +1,6 @@
 INDEX VERSION 1.131
+C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2889392727.index
+\PersonaRest\src\main\resources
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2654441781.index
 \Struts2\src\main\resources
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3995074578.index
@@ -39,6 +41,8 @@ C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\211251
 \GestioneMunicipioSpringDataMaven\src\main\resources
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\701759636.index
 \PokerOnline-master\src\main\java
+C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2726076380.index
+\HelloJacRSJ\src\main\resources
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1507642150.index
 \Hello11\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\526204342.index
@@ -77,6 +81,8 @@ C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\286917
 \GestioneMunicipioSpringJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1369731774.index
 \ProvaStruts2\src
+C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1983989042.index
+\PizzaStoreMavenRest\src\main\resources
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2466351251.index
 \PersonaSpringJPA\src
 C:\corso\ws_eclipse\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1749955523.index
